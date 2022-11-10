@@ -1,34 +1,10 @@
 import { Router, Request, Response } from "express";
 import axios from 'axios';
+import config from '../config';
+import { Breed, BreedNames, Image } from '../types';
 
-axios.defaults.headers.common['x-api-key'] = 'live_PSPRB8KlChPA0V5YVetw4mqMLz863O16079Ng4QPWsIiSw7BZ29eGgHZR8flG1gZ';
+axios.defaults.headers.common['x-api-key'] = config.catApiKey;
 
-interface Breed {
-    id:string;
-    name:string;
-    weight:string;
-    temperament:string;
-    origin:string;
-    description:string;
-    life_span:string;
-    adaptability:number;
-    affection:number;
-    child:number;
-    dog:number;
-    energy:number;
-    health_issues:number;
-    intelligence:number;
-    social_needs:number;
-    image?:string
-    wikipedia:string;
-}
-interface BreedsNames {
-    id:string;
-    name:string;
-}
-interface Image {
-    url:string;
-}
 
 
 
@@ -36,7 +12,7 @@ const catRoutes = Router();
 
 
 //Obtener una imagen aleatoria
-catRoutes.get('/image', async (req:Request, res:Response) => {
+catRoutes.get('/image', async (_req, res) => {
     try {
         const response = await axios({
             method: 'GET',
@@ -49,14 +25,14 @@ catRoutes.get('/image', async (req:Request, res:Response) => {
 })
 
 //Obtener las razas
-catRoutes.get('/breeds', async (req:Request, res:Response) => {
+catRoutes.get('/breeds', async (_req, res) => {
     try {
         const response = await axios({
             method: 'GET',
             url: 'https://api.thecatapi.com/v1/breeds'
         })
 
-        const breeds:BreedsNames[] = response.data.map( (element:any):BreedsNames => {
+        const breeds:BreedNames[] = response.data.map( (element:any):BreedNames => {
             return {
                 id:element.id,
                 name: element.name
