@@ -3,6 +3,7 @@ export enum http {
     BASE_URL = 'http://localhost:3001'
 }
 
+//Breeds
 export interface BreedImageInterface {
     breed:string
     page:number
@@ -44,4 +45,26 @@ export interface BreedState {
         detail:string
         images:string
     }
+}
+
+//Categories
+export interface CategorieNames {
+    id:string
+    url:string
+}
+
+export interface CategorieState {
+    names:CategorieNames[]
+    loadingNames:boolean
+    urls:string[]
+    loadingUrls:boolean
+    error: {
+        names:string
+        url:string
+    }
+}
+
+export interface reqCategorieImages {
+    id:number
+    page:number
 }
