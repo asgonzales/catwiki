@@ -2,6 +2,7 @@ import express, { Application, Request, Response, NextFunction } from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
 import config from './config';
+import catRoutes from './routes/cats';
 
 const app:Application = express();
 
@@ -28,3 +29,12 @@ app.use((err:Error, req:Request, res:Response, next:NextFunction) => {
 
     res.status(status).send(message)
 })
+
+app.use(catRoutes);
+
+
+
+
+
+
+export default app;
