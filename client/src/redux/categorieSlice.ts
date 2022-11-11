@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { CategorieState, http, CategorieNames, reqCategorieImages } from "../types.d";
+import { CategorieState, http, CategorieNames, reqCategorieImages } from "../types/types.d";
 
 
 
