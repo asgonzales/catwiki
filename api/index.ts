@@ -1,13 +1,4 @@
-import express from 'express';
-
-
-
-
-
-
-
-
-const server = express()
+import server from './src/app';
 
 
 
