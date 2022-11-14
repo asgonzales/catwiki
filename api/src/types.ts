@@ -22,3 +22,9 @@ export type BreedNames = Pick<Breed, 'id' | 'name'>
 export interface Image {
     url:string;
 }
+
+export interface Categories {
+    id:number
+    name:string
+    image?:string
+}

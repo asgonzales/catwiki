@@ -50,13 +50,17 @@ export interface BreedState {
 //Categories
 export interface CategorieNames {
     id:string
-    url:string
+    name:string
+    image:string
 }
 
+type image = {
+    url: string
+}
 export interface CategorieState {
     names:CategorieNames[]
     loadingNames:boolean
-    urls:string[]
+    urls:image[]
     loadingUrls:boolean
     error: {
         names:string
@@ -65,6 +69,6 @@ export interface CategorieState {
 }
 
 export interface reqCategorieImages {
-    id:number
+    id:string
     page:number
 }

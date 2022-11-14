@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { CategorieState, http, CategorieNames, reqCategorieImages } from "../types.d";
+import { CategorieState, http, CategorieNames, reqCategorieImages, image } from "../types/types.d";
 
 
 
@@ -35,7 +35,7 @@ export const getCategorieImages = createAsyncThunk(
     'categories/getImages',
     async (cat:reqCategorieImages, thunkAPI) => {
         try {
-            const response = await axios<string[]>({
+            const response = await axios<image[]>({
                 method: http.GET,
                 url: `${http.BASE_URL}/categorie/${cat.id}?page=${cat.page}`
             })

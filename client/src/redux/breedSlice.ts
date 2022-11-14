@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { http, BreedState, BreedNames, BreedDetail, BreedImageInterface } from "../types.d";
+import { http, BreedState, BreedNames, BreedDetail, BreedImageInterface } from "../types/types.d";
 const initialState:BreedState = {
     names: [],
     loadingNames: false,
