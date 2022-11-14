@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import axios from 'axios';
 import config from '../config';
-import { Breed, BreedNames, Image } from '../types';
+import { Breed, BreedNames, Categories, Image } from '../types';
 
 axios.defaults.headers.common['x-api-key'] = config.catApiKey;
 
@@ -104,7 +104,19 @@ catRoutes.get('/categories', async (req:Request, res:Response) => {
             method: 'GET',
             url: 'https://api.thecatapi.com/v1/categories'
         })
-        res.status(200).json(response.data)
+        let categories:Categories[] = [...response.data]
+        for (let i = 0; i < categories.length; i++) {
+            const url = await axios({
+                method: 'GET',
+                url: `https://api.thecatapi.com/v1/images/search?category_ids=${categories[i].id}`
+            })
+            console.log(url.data[0].url)
+            categories[i] = {
+                ...categories[i],
+                image: url.data[0].url
+            }
+        }
+        res.status(200).json(categories)
     } catch (err:any) {
         res.status(400).json({ error: err.message })
     }
