@@ -42,7 +42,7 @@ export const getBreedNames = createAsyncThunk(
         try {
             const response = await axios<BreedNames[]>({
                 method: http.GET,
-                url: `${http.BASE_URL}/breeuds`
+                url: `${http.BASE_URL}/breeds`
             })
             return response.data
         } catch (err:any) {

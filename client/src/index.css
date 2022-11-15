@@ -1,5 +1,8 @@
 :root {
-  --shadow: rgba(30, 30, 30, .8)
+  --shadow: rgba(30, 30, 30, .8);
+  --orange: #BF5D1D;
+  --brown: #5F2705;
+  --purple: #522A45;
 }
 body {
   margin: 0;
