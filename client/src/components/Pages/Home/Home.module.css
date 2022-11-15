@@ -49,3 +49,8 @@
     width: 100%;
     margin-left: 2rem;
 }
+.homeCardDiv {
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 25rem;
+}

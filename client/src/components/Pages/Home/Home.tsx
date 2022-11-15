@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { getCategorieNames } from "../../../redux/categorieSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import CategorieCard from "../../Cards/CategorieCard/Categorie";
+import HomeCard from "../../Cards/HomeCard/HomeCard";
 import style from './Home.module.css';
 
 
@@ -27,7 +28,9 @@ export default function Home() {
 
     return (
         <div className={style.HomeCont}>
-            ola soy el home
+            <div className={style.homeCardDiv}>
+                <HomeCard />
+            </div>
             <div className={style.categoriesDiv} ref={categoriesDiv}>
                 <h3 className={style.categoriesTitle}>Categories:</h3>
                 <div>

@@ -72,3 +72,12 @@ export interface reqCategorieImages {
     id:string
     page:number
 }
+
+//Cats
+export interface Cats {
+    image:string
+    loadingImage:boolean
+    error: {
+        image:string
+    }
+}
