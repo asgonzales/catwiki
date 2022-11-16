@@ -1,4 +1,4 @@
-
+import style from './ImageCard.module.css';
 
 
 
@@ -13,7 +13,7 @@ export default function ImageCard({image}:Props) {
 
 
     return (
-        <div>
+        <div className={style.ContImageCard}>
             <img src={image} alt="cat" />
         </div>
     )

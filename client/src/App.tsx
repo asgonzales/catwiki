@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Pages/Home/Home';
-import BreedDetail from './components/Pages/BreedDetail';
+import BreedDetail from './components/Pages/BreedDetail/BreedDetail';
 import Game from './components/Pages/Game';
 import About from './components/Pages/About';
 import NotFound from './components/Pages/NotFound';

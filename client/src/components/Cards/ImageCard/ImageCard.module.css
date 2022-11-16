@@ -1,0 +1,14 @@
+.ContImageCard {
+    /* border: 1px solid red; */
+    width: 20rem;
+    height: 15rem;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 1rem;
+    box-shadow: 0 0 15px var(--shadow);
+}
+.ContImageCard > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}

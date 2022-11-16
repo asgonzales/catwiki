@@ -61,7 +61,7 @@ export default function SearchBar () {
                         {
                             filterResults.map((el, index) => {
                                 return (
-                                    <Link to={`/results/${el.id}`} key={index} className={style.nameLink} >{el.name}</Link>
+                                    <Link to={`/breed/${el.id}`} key={index} className={style.nameLink} >{el.name}</Link>
                                 )
                             })
                         }

@@ -1,5 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;500;600;700;800&family=Gluten:wght@100;200;300;400;500;600;700;800&display=swap');
 :root {
-  --shadow: rgba(30, 30, 30, .8);
+  --shadow: rgba(30, 30, 30, .5);
   --orange: #BF5D1D;
   --brown: #5F2705;
   --purple: #522A45;

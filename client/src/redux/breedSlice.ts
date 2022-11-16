@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-import { http, BreedState, BreedNames, BreedDetail, BreedImageInterface } from "../types/types.d";
+import { http, BreedState, BreedNames, BreedImageInterface, BreedDetails, urls } from "../types/types.d";
 const initialState:BreedState = {
     names: [],
     loadingNames: false,
@@ -55,7 +55,7 @@ export const getBreedDetails = createAsyncThunk(
     'breed/getBreedDetail',
     async (breedId:string, thunkAPI) => {
         try {
-            const response = await axios<BreedDetail>({
+            const response = await axios<BreedDetails>({
                 method: http.GET,
                 url: `${http.BASE_URL}/breed/${breedId}`
             })
@@ -70,7 +70,7 @@ export const getBreedImages = createAsyncThunk(
     'breed/getBreedImages',
     async (image:BreedImageInterface, thunkAPI) => {
         try {
-            const response = await axios<string[]>({
+            const response = await axios<urls[]>({
                 method: http.GET,
                 url: `${http.BASE_URL}/image/${image.breed}?page=${image.page}`
             })
@@ -116,6 +116,7 @@ export const breedSlice = createSlice({
         })
         builder.addCase(getBreedImages.fulfilled, (state, action) => {
             state.images = action.payload
+            // state.images = [...state.images, ...action.payload]
             state.loadingImages = false
         })
         builder.addCase(getBreedImages.rejected, (state, action) => {

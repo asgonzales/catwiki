@@ -26,7 +26,7 @@
     justify-content: space-around;
     color: white;
 }
-.infoDiv > h3, p {
+.infoDiv > h3, .infoDiv > p {
     background: linear-gradient(90deg, transparent, var(--shadow), transparent);
     padding: 1rem;
     width: 100%;
