@@ -14,31 +14,42 @@ export interface BreedNames {
     name:string
 }
 
-export interface BreedDetail {
-    id:string
-    name:string
-    weight:string
-    temperament:string
-    origin:string
-    description:string
-    life_span:string
+
+
+interface BreedStats {
     adaptability:number
     affection:number
     child:number
     dog:number
-    energy:number
-    health_issues:number
     intelligence:number
+    health_issues:number
     social_needs:number
+    energy:number
+
+}
+
+export interface BreedDetails {
+    id:string
+    name:string
+    description:string
+    weight:string
+    temperament:string
+    origin:string
+    life_span:string
+    stats:BreedStats
     image?:string
     wikipedia:string
+}
+
+export type urls = {
+    url:string
 }
 export interface BreedState {
     names:BreedNames[]
     loadingNames:boolean
     detail:BreedDetail
     loadingDetail:boolean
-    images:string[]
+    images:urls[]
     loadingImages:boolean
     error: {
         name:string
@@ -71,4 +82,13 @@ export interface CategorieState {
 export interface reqCategorieImages {
     id:string
     page:number
+}
+
+//Cats
+export interface Cats {
+    image:string
+    loadingImage:boolean
+    error: {
+        image:string
+    }
 }

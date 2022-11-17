@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { getCategorieNames } from "../../../redux/categorieSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import CategorieCard from "../../Cards/CategorieCard/Categorie";
+import HomeCard from "../../Cards/HomeCard/HomeCard";
+import Loading from "../../Loading/Loading";
 import style from './Home.module.css';
 
 
@@ -16,24 +18,27 @@ export default function Home() {
     const categoriesDiv = useRef<HTMLDivElement>(null)
     
     useEffect(() => {
+        if(categories.names.length == 0)
         dispatch(getCategorieNames())
     }, [dispatch])
-    const moreCategories = () => {
-        if(categoriesDiv.current) {
-            categoriesDiv.current.className = style.longCategoriesDiv
-        }
-    }
+    // const moreCategories = () => {
+    //     if(categoriesDiv.current) {
+    //         categoriesDiv.current.className = style.longCategoriesDiv
+    //     }
+    // }
 
 
     return (
         <div className={style.HomeCont}>
-            ola soy el home
-            <div className={style.categoriesDiv} ref={categoriesDiv}>
-                <h3 className={style.categoriesTitle}>Categories:</h3>
+            <div className={style.homeCardDiv}>
+                <HomeCard />
+            </div>
+            <div className={style.longCategoriesDiv} ref={categoriesDiv}>
+                <h3 className={style.categoriesTitle}><span>Cat</span><span>egories:</span></h3>
                 <div>
                     {
                         categories.loadingNames && !categories.error.names && 
-                        <h3>Cargando...</h3>
+                        <Loading />
                     }
                     {
                         !categories.loadingNames && categories.names.map((el) => {
@@ -41,7 +46,7 @@ export default function Home() {
                         })
                     }
                 </div>
-                <button onClick={moreCategories} className={style.moreCategoriesButton}>See more...</button>
+                {/* <button  className={style.moreCategoriesButton}>See more...</button> */}
             </div>
             {/* <button onClick={() => console.log(categories)}>console log</button> */}
         </div>

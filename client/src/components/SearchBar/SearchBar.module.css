@@ -1,0 +1,99 @@
+.ContSearchBar {
+    /* border: 1px solid green; */
+    height: 9rem;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+    font-family: 'Gluten';
+}
+.link {
+    text-decoration: none;
+}
+.Cat {
+    color: var(--orange);
+    text-shadow: 0 0 1px var(--black);
+}
+.Wiki {
+    text-shadow: 0 0 1px var(--black);
+    color: var(--black);
+}
+.headerDiv {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.headerDiv > div {
+    margin: 0 1rem;
+}
+.searchDiv { 
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .searchDiv > div {
+    border: 1px solid green;
+} */
+.searchInput {
+    font-family: 'Nunito';
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--shadow);
+    padding: .5rem 1rem;
+    box-shadow: 0 0 5px rgba(10, 10, 10, .2);
+    width: 13rem;
+}
+.searchButton {
+    border-radius: 0 5px 5px 0;
+    padding: .5rem 1rem;
+    border: 1px solid var(--shadow);
+    box-shadow: 0 0 5px rgba(10, 10, 10, .2);
+    background-color: var(--orange);
+    color: var(--purple);
+}
+.namesDiv {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 15rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(10, 10, 10, .2);
+    border: 1px solid var(--shadow);
+    max-height: 12rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+    transition: all .2s ease;
+    visibility: hidden;
+    font-family: 'Nunito';
+    font-size: 1.1rem;
+    animation: born 0.5s ease;
+}
+.hiddenNamesDiv {
+    display: none;
+}
+.searchDiv:focus-within > div > .namesDiv {
+    visibility: visible;
+}
+.nameLink {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    padding: .2rem;
+}
+.nameLink:hover {
+    background-color: var(--shadow);
+}
+
+@keyframes born {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 12rem;
+    }
+}

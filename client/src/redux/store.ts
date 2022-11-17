@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import breedReducer from './breedSlice';
 import categorieReducer from "./categorieSlice";
+import catsReducer from "./catSlice";
 
 const store = configureStore({
     reducer: {
         breed: breedReducer,
-        categorie: categorieReducer
+        categorie: categorieReducer,
+        cats: catsReducer
     }
 })
 

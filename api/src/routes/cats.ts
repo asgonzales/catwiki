@@ -52,25 +52,32 @@ catRoutes.get('/breed/:breedId', async (req:Request, res:Response) => {
             method: 'GET',
             url: `https://api.thecatapi.com/v1/breeds/${breedId}`
         })
-        const details:Breed = {
+        let details:Breed = {
                 id:response.data.id,
                 name: response.data.name,
+                description: response.data.description,
                 weight: response.data.weight.metric,
                 temperament: response.data.temperament,
                 origin: response.data.origin,
-                description: response.data.description,
                 life_span: response.data.life_span,
-                adaptability: response.data.adaptability,
-                affection: response.data.affection_level,
-                child: response.data.child_friendly,
-                dog: response.data.dog_friendly,
-                energy: response.data.energy_level,
-                health_issues: response.data.health_issues,
-                intelligence: response.data.intelligence,
-                social_needs: response.data.social_needs,
+                stats: {
+                    adaptability: response.data.adaptability,
+                    affection: response.data.affection_level,
+                    child: response.data.child_friendly,
+                    dog: response.data.dog_friendly,
+                    intelligence: response.data.intelligence,
+                    health_issues: response.data.health_issues,
+                    social_needs: response.data.social_needs,
+                    energy: response.data.energy_level,
+                },
                 image: response.data.image?.url,
                 wikipedia: response.data.wikipedia_url
         }
+        const responseImage = await axios({
+            method: 'GET',
+            url: `https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}&size=med`
+        })
+        details.image = responseImage.data[0].url
         res.status(200).json(details)
     } catch (err:any) {
         res.status(400).json({error: err.message})
@@ -84,7 +91,7 @@ catRoutes.get('/image/:breed', async (req:Request, res:Response) => {
         const { page } = req.query;
         const response = await axios({
             method:'GET',
-            url: `https://api.thecatapi.com/v1/images/search?breed_ids=${breed}&limit=3&order=asc&page=${page || 1}`
+            url: `https://api.thecatapi.com/v1/images/search?breed_ids=${breed}&limit=15&order=asc&page=${page || 1}`
         })
         const images:Image[] = response.data.map((element:any):Image => {
             return {
