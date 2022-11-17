@@ -9,6 +9,7 @@
     display: flex;
     justify-content: center;
     /* align-items: center; */
+    animation: born 0.5s ease;
 }
 .ContImageCard > img {
     width: 100%;
@@ -19,4 +20,13 @@
 .ContImageCard:hover > img {
     height: 120%;
     /* border: 3px solid red; */
+}
+
+@keyframes born {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }

@@ -4,6 +4,7 @@
     height: 100%;
     overflow: hidden;
     position: relative;
+    animation: born 0.2s ease;
 }
 .ContHomeCard > div {
     width: 100%;
@@ -47,4 +48,13 @@
 .Cat {
     font-family: 'Gluten';
     color: var(--orange);
+}
+
+@keyframes born {
+    0% {
+        transform: scale(0%);
+    }
+    100% {
+        transform: scale(100%);
+    }
 }

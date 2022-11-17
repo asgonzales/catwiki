@@ -3,6 +3,7 @@ import { getCategorieNames } from "../../../redux/categorieSlice";
 import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import CategorieCard from "../../Cards/CategorieCard/Categorie";
 import HomeCard from "../../Cards/HomeCard/HomeCard";
+import Loading from "../../Loading/Loading";
 import style from './Home.module.css';
 
 
@@ -17,6 +18,7 @@ export default function Home() {
     const categoriesDiv = useRef<HTMLDivElement>(null)
     
     useEffect(() => {
+        if(categories.names.length == 0)
         dispatch(getCategorieNames())
     }, [dispatch])
     // const moreCategories = () => {
@@ -36,7 +38,7 @@ export default function Home() {
                 <div>
                     {
                         categories.loadingNames && !categories.error.names && 
-                        <h3>Cargando...</h3>
+                        <Loading />
                     }
                     {
                         !categories.loadingNames && categories.names.map((el) => {

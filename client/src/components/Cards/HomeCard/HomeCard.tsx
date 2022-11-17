@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { getHomeImage } from "../../../redux/catSlice"
 import { useAppDispatch, useAppSelector } from "../../../redux/store"
+import Loading from "../../Loading/Loading";
 import style from './HomeCard.module.css';
 
 
@@ -26,7 +27,7 @@ export default function HomeCard () {
         <div className={style.ContHomeCard}>
             <div>
                 {
-                    cat.loadingImage && !cat.image && <h2>Cargando...</h2>
+                    cat.loadingImage && !cat.image && <Loading />
                 }
                 {
                     cat.image !== '' &&
