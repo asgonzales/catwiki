@@ -10,3 +10,7 @@
     flex-direction: column;
     align-items: center;
 }
+.galleryDiv > h1 {
+    /* border: 1px solid red; */
+    font-family: 'Gluten';
+}

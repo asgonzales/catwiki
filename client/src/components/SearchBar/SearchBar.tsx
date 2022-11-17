@@ -1,4 +1,4 @@
-import React, { ChangeEventHandler, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getBreedNames } from '../../redux/breedSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
@@ -23,7 +23,7 @@ export default function SearchBar () {
     useEffect(() => {
         if(names.length == 0) dispatch(getBreedNames())
         if(namesDiv.current) {
-            if(filterResults.length == 0    ) {
+            if(filterResults.length == 0) {
                 namesDiv.current.className = style.hiddenNamesDiv
             }
             else {
@@ -48,7 +48,9 @@ export default function SearchBar () {
         <div className={style.ContSearchBar}>
             <div className={style.headerDiv}>
                 <div>
-                    <h1><span className={style.Cat}>Cat</span> <span className={style.Wiki}>Wiki</span></h1>
+                    <Link to='/' className={style.link}>
+                        <h1><span className={style.Cat}>Cat</span> <span className={style.Wiki}>Wiki</span></h1>
+                    </Link>
                 </div>
                 <div>
                     <span>Menu</span>
@@ -67,7 +69,7 @@ export default function SearchBar () {
                         }
                     </div>
                 </div>
-                <button className={style.searchButton}>Buscar</button>
+                {/* <button className={style.searchButton}>Buscar</button> */}
             </div>
         </div>
     )

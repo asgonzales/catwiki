@@ -31,12 +31,12 @@ export default function BreedDetail() {
             {/* <button onClick={() => console.log(details)}>console</button> */}
             <div className={style.detailsDiv}>
                 {
-                    details.detail &&
+                    details.detail.id !== '' &&
                     <BreedDetailCard breedDetail={details.detail}/>
                 }
             </div>
-            <div>
-                <h3>Gallery:</h3>
+            <div className={style.galleryDiv}>
+                <h1>Gallery:</h1>
                 {
                     details.images.map((el, index) => {
                         return (

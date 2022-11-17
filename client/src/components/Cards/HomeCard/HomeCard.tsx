@@ -26,7 +26,7 @@ export default function HomeCard () {
         <div className={style.ContHomeCard}>
             <div>
                 {
-                    cat.loadingImage && <h2>Cargando...</h2>
+                    cat.loadingImage && !cat.image && <h2>Cargando...</h2>
                 }
                 {
                     cat.image !== '' &&
@@ -34,8 +34,8 @@ export default function HomeCard () {
                 }
             </div>
             <div onClick={changeImage} className={style.infoDiv}>
-                <h3>Welcome to CatWiki</h3>
-                <p>Here you can search for cat images and breed's information!</p>
+                <h3>Welcome to <br /> <span className={style.Cat} >Cat </span><span> Wiki</span></h3>
+                <p>Here you can search for <span className={style.Cat} >Cat</span> images and breed's information!</p>
             </div>
         </div>
     )

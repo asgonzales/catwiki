@@ -1,15 +1,21 @@
 .ContSearchBar {
-    /* border: 1px solid red; */
+    /* border: 1px solid green; */
     height: 9rem;
     /* display: flex;
     flex-direction: column;
     align-items: center; */
+    font-family: 'Gluten';
+}
+.link {
+    text-decoration: none;
 }
 .Cat {
     color: var(--orange);
+    text-shadow: 0 0 1px var(--black);
 }
 .Wiki {
-    color: var(--purple);
+    text-shadow: 0 0 1px var(--black);
+    color: var(--black);
 }
 .headerDiv {
     display: flex;
@@ -29,11 +35,15 @@
     border: 1px solid green;
 } */
 .searchInput {
-    border-radius: 5px 0 0 5px;
+    font-family: 'Nunito';
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 5px;
     outline: none;
     border: 1px solid var(--shadow);
     padding: .5rem 1rem;
     box-shadow: 0 0 5px rgba(10, 10, 10, .2);
+    width: 13rem;
 }
 .searchButton {
     border-radius: 0 5px 5px 0;
@@ -47,10 +57,8 @@
     position: absolute;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid red; */
-    width: 12.5rem;
+    width: 15rem;
     align-items: center;
-    /* justify-content: center; */
     background-color: white;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(10, 10, 10, .2);
@@ -61,6 +69,9 @@
     z-index: 2;
     transition: all .2s ease;
     visibility: hidden;
+    font-family: 'Nunito';
+    font-size: 1.1rem;
+    animation: born 0.5s ease;
 }
 .hiddenNamesDiv {
     display: none;
@@ -76,4 +87,13 @@
 }
 .nameLink:hover {
     background-color: var(--shadow);
+}
+
+@keyframes born {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 12rem;
+    }
 }

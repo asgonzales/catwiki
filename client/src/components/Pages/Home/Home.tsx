@@ -19,11 +19,11 @@ export default function Home() {
     useEffect(() => {
         dispatch(getCategorieNames())
     }, [dispatch])
-    const moreCategories = () => {
-        if(categoriesDiv.current) {
-            categoriesDiv.current.className = style.longCategoriesDiv
-        }
-    }
+    // const moreCategories = () => {
+    //     if(categoriesDiv.current) {
+    //         categoriesDiv.current.className = style.longCategoriesDiv
+    //     }
+    // }
 
 
     return (
@@ -31,8 +31,8 @@ export default function Home() {
             <div className={style.homeCardDiv}>
                 <HomeCard />
             </div>
-            <div className={style.categoriesDiv} ref={categoriesDiv}>
-                <h3 className={style.categoriesTitle}>Categories:</h3>
+            <div className={style.longCategoriesDiv} ref={categoriesDiv}>
+                <h3 className={style.categoriesTitle}><span>Cat</span><span>egories:</span></h3>
                 <div>
                     {
                         categories.loadingNames && !categories.error.names && 
@@ -44,7 +44,7 @@ export default function Home() {
                         })
                     }
                 </div>
-                <button onClick={moreCategories} className={style.moreCategoriesButton}>See more...</button>
+                {/* <button  className={style.moreCategoriesButton}>See more...</button> */}
             </div>
             {/* <button onClick={() => console.log(categories)}>console log</button> */}
         </div>
