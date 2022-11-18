@@ -1,8 +1,8 @@
 import server from './app';
 
+import config from './config';
 
 
-
-server.listen(3001, () => {
-    console.log('server listening at ', 3001)
+server.listen(config.port, () => {
+    console.log('server listening at ', config.port)
 })

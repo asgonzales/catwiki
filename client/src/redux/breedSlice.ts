@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import { config } from "../types/config";
 
-import { http, BreedState, BreedNames, BreedImageInterface, BreedDetails, urls } from "../types/types.d";
+import { BreedState, BreedNames, BreedImageInterface, BreedDetails, urls } from "../types/types.d";
 const initialState:BreedState = {
     names: [],
     loadingNames: false,
@@ -41,8 +42,8 @@ export const getBreedNames = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const response = await axios<BreedNames[]>({
-                method: http.GET,
-                url: `${http.BASE_URL}/breeds`
+                method: 'GET',
+                url: `${config.backUrl}/breeds`
             })
             return response.data
         } catch (err:any) {
@@ -56,8 +57,8 @@ export const getBreedDetails = createAsyncThunk(
     async (breedId:string, thunkAPI) => {
         try {
             const response = await axios<BreedDetails>({
-                method: http.GET,
-                url: `${http.BASE_URL}/breed/${breedId}`
+                method: 'GET',
+                url: `${config.backUrl}/breed/${breedId}`
             })
             return response.data
         } catch (err:any) {
@@ -71,8 +72,8 @@ export const getBreedImages = createAsyncThunk(
     async (image:BreedImageInterface, thunkAPI) => {
         try {
             const response = await axios<urls[]>({
-                method: http.GET,
-                url: `${http.BASE_URL}/image/${image.breed}?page=${image.page}`
+                method: 'GET',
+                url: `${config.backUrl}/image/${image.breed}?page=${image.page}`
             })
             return response.data
         } catch (err:any) {
