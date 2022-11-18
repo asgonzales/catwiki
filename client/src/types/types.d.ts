@@ -1,7 +1,4 @@
-export enum http {
-    GET = 'GET',
-    BASE_URL = 'http://localhost:3001'
-}
+
 
 //Breeds
 export interface BreedImageInterface {

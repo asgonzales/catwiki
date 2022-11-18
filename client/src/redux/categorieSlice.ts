@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from 'axios';
-import { CategorieState, http, CategorieNames, reqCategorieImages, image } from "../types/types.d";
+import { config } from "../types/config";
+import { CategorieState, CategorieNames, reqCategorieImages, image } from "../types/types.d";
 
 
 
@@ -21,8 +22,8 @@ export const getCategorieNames = createAsyncThunk(
     async (_, thunkAPI) => {
         try {
             const response = await axios<CategorieNames[]>({
-                method: http.GET,
-                url: `${http.BASE_URL}/categories`
+                method: 'GET',
+                url: `${config.backUrl}/categories`
             })
             return response.data
         } catch (err:any) {
@@ -36,8 +37,8 @@ export const getCategorieImages = createAsyncThunk(
     async (cat:reqCategorieImages, thunkAPI) => {
         try {
             const response = await axios<image[]>({
-                method: http.GET,
-                url: `${http.BASE_URL}/categorie/${cat.id}?page=${cat.page}`
+                method: 'GET',
+                url: `${config.backUrl}/categorie/${cat.id}?page=${cat.page}`
             })
             return response.data
         } catch (err:any) {
