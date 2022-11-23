@@ -8,31 +8,9 @@
 }
 .homeCardDiv {
     /* border: 1px solid red; */
-    /* margin: 0; */
     width: 100%;
     height: 25rem;
 }
-/* .categoriesDiv {
-    position: relative;
-    border: 1px solid blue;
-    width: 100%;
-    height: 30rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    transition: all 0.2s ease;
-} */
-/* .moreCategoriesButton {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 2rem;
-    border: none;
-    color: white;
-    font-weight: 800;
-    background: linear-gradient(0deg, var(--shadow), transparent);
-} */
 .longCategoriesDiv {
     position: relative;
     /* border: 2px solid blue; */
@@ -43,20 +21,17 @@
     /* justify-content: center; */
     align-items: center;
     overflow: hidden;
+    /* background: linear-gradient(0deg, rgba(var(--plight)), transparent); */
 }
-/* .longCategoriesDiv > .moreCategoriesButton {
-    display: none;
-} */
 .categoriesTitle {
-    /* margin: 0; */
     font-family: 'Gluten';
-    /* color: white; */
-    text-shadow: 0 0 1px var(--black);
+    text-shadow: 0 0 1px rgb(var(--secondary));
     text-align: left;
     width: 100%;
     margin-left: 2rem;
     font-size: 2rem;
+    color: rgb(var(--secondary));
 }
 .categoriesTitle > span:first-of-type {
-    color: var(--orange);
+    color: rgb(var(--primary));
 }

@@ -4,7 +4,7 @@ import { getBreedNames } from '../../redux/breedSlice';
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { BreedNames } from '../../types/types';
 import style from './SearchBar.module.css';
-
+import iconSearch from '../../media/Icons/search.png'
 
 
 
@@ -52,13 +52,18 @@ export default function SearchBar () {
                         <h1><span className={style.Cat}>Cat</span> <span className={style.Wiki}>Wiki</span></h1>
                     </Link>
                 </div>
-                <div>
+                {/* <div>
                     <span>Menu</span>
-                </div>
+                </div> */}
             </div>
             <div className={style.searchDiv}>
                 <div>
-                    <input ref={inputNames} onChange={e => handleResults(e)} className={style.searchInput} type="text" placeholder='Search breeds...' />
+                    <div  className={style.searchInputDiv}>
+                        <div>
+                            <img src={iconSearch} alt="search" />
+                        </div>
+                        <input ref={inputNames} onChange={e => handleResults(e)} className={style.searchInput} type="text" placeholder='Search breeds...' />
+                    </div>
                     <div className={style.namesDiv} ref={namesDiv} hidden>
                         {
                             filterResults.map((el, index) => {

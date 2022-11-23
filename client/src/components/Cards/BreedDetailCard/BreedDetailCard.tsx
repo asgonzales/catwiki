@@ -22,8 +22,8 @@ export default function BreedDetailCard ({breedDetail}:Props) {
         const rating = (q:number) => {
             const quantity:JSX.Element[] = []
             for(let i = 0; i < 5; i++) {
-                if( i < q) quantity.push(<img src={catIcon} className={style.catIcon} />)
-                else quantity.push(<img src={emptyCatIcon} className={style.catIcon} />)
+                if( i < q) quantity.push(<img key={i} src={catIcon} className={style.catIcon} />)
+                else quantity.push(<img key={i} src={emptyCatIcon} className={style.catIcon} />)
             }
             return quantity
         }

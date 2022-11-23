@@ -89,3 +89,6 @@ export interface Cats {
         image:string
     }
 }
+export interface Params {
+    size:string
+}

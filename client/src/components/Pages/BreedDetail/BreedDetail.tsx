@@ -22,6 +22,7 @@ export default function BreedDetail() {
     const [page, setPage] = useState(0)
 
     useEffect(() => {
+        document.title = `Cat Wiki - Details of ${details.detail.name}`
         dispatch(getBreedDetails(breedId as string))
         dispatch(getBreedImages({breed: breedId, page: page}))
     }, [breedId])
