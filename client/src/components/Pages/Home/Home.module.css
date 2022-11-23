@@ -16,12 +16,11 @@
     /* border: 2px solid blue; */
     width: 100%;
     height: auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    overflow: hidden;
-    /* background: linear-gradient(0deg, rgba(var(--plight)), transparent); */
+    justify-content: center;
 }
 .categoriesTitle {
     font-family: 'Gluten';
@@ -34,4 +33,21 @@
 }
 .categoriesTitle > span:first-of-type {
     color: rgb(var(--primary));
+}
+
+.longCategoriesDiv > div {
+    /* border: 1px solid green; */
+    width: 90%;
+    
+    display: flex;
+    /* flex-direction: column; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+@media screen and (min-width: 768px) {
+    .homeCardDiv {
+        width: 45rem;
+    }
 }

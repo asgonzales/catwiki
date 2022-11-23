@@ -32,10 +32,10 @@ export default function BreedDetailCard ({breedDetail}:Props) {
     return (
         <div className={style.ContBreedDetailCard}>
             {/* <button onClick={() => console.log(breedDetail)}>ce</button> */}
-            <div className={style.imgDiv}>
-                <img src={breedDetail.image} alt={breedDetail.name} />
-            </div>
-            <div className={style.infoDiv}>
+            <div className={style.pInfo}>
+                <div className={style.imgDiv}>
+                    <img src={breedDetail.image} alt={breedDetail.name} />
+                </div>
                 <div className={style.staticInfoDiv}>
                     <h1>{breedDetail.name}</h1>
                     <a href={breedDetail.wikipedia} referrerPolicy='no-referrer' target='_blank'>{breedDetail.wikipedia}</a>
@@ -45,63 +45,63 @@ export default function BreedDetailCard ({breedDetail}:Props) {
                     <p><span className={style.blackSpan} >Temperament: </span><span>{breedDetail.temperament}.</span></p>
                     <p><span className={style.blackSpan} >Weight: </span><span>{breedDetail.weight} Kg.</span></p>
                 </div>
-                <div className={style.statsDiv}>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Adaptability: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.adaptability)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Affection: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.affection)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Child friendly: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.child)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Dog friendly: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.dog)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Intelligence: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.intelligence)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Health Issues: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.health_issues)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Social needs: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.social_needs)
-                        }
-                    </div>
-                    <div className={style.singleStatDiv}>
-                        <span className={style.blackSpan}>Energy: </span>
-                        <br />
-                        {
-                            rating(breedDetail.stats.energy)
-                        }
-                    </div>
+            </div>
+            <div className={style.statsDiv}>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Adaptability: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.adaptability)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Affection: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.affection)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Child friendly: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.child)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Dog friendly: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.dog)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Intelligence: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.intelligence)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Health Issues: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.health_issues)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Social needs: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.social_needs)
+                    }
+                </div>
+                <div className={style.singleStatDiv}>
+                    <span className={style.blackSpan}>Energy: </span>
+                    <br />
+                    {
+                        rating(breedDetail.stats.energy)
+                    }
                 </div>
             </div>
         </div>

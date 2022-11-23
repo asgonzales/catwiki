@@ -43,13 +43,15 @@ export default function BreedDetail() {
                     </div>
                     <div className={style.galleryDiv}>
                         <h1>Gallery:</h1>
-                        {
-                            details.images.map((el, index) => {
-                                return (
-                                    <ImageCard image={el.url} key={index} />
-                                )
-                            })
-                        }
+                        <div>
+                            {
+                                details.images.map((el, index) => {
+                                    return (
+                                        <ImageCard image={el.url} key={index} />
+                                    )
+                                })
+                            }
+                        </div>
                     </div>
                 </>
             }

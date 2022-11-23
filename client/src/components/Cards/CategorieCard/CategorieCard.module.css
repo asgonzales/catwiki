@@ -6,16 +6,12 @@
     animation: born 0.2s ease;
 }
 .link {
-    /* box-shadow: 0 0 10px rgb(var(--sdark), .5); */
     /* border: 1px solid purple; */
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
     width: 100%;
     height: 100%;
-    /* position: relative; */
     border-radius: 10px;
 }
 .imgDiv {
@@ -27,7 +23,6 @@
     align-items: center;
     border-radius: 10px;
     overflow: hidden;
-    /* background-color: transparent; */
     /* border: 1px solid green; */
 }
 .imgDiv > img {
@@ -35,21 +30,14 @@
     height: 100%;
     object-fit: cover;
     transition: all 0.2s ease;
-    /* filter: blur(2px); */
-    /* filter: drop-shadow(inset 0 0 10px black); */
 }
 .titleDiv {
-    /* position: absolute; */
     width: 100%;
     height: 20%;
-    /* background-color: red; */
     /* border: 1px solid skyblue; */
-    /* height: 20%; */
     bottom: 0;
     display: flex;
     align-items: center;
-    /* box-shadow: inset 0 0 20px 5px rgb(var(--sdark), .5); */
-    /* background: linear-gradient(90deg, transparent, transparent); */
     transition: all .2s ease;
     border-radius: 0 50px 50px 0;
 }
@@ -79,10 +67,6 @@
     font-weight: 800;
     font-size: 1.2rem;
     font-family: 'Nunito';
-    /* text-shadow: 0 0 5px rgb(var(--slight)); */
-    /* background: linear-gradient(0deg, rgba(var(--sdark), .6), transparent); */
-    /* background-color: rgba(var(--sdark), .7); */
-    /* backdrop-filter: blur(2px); */
     transition: all 0.2s ease;
 }
 .link:hover > .imgDiv > img {
@@ -90,18 +74,24 @@
 }
 .link:hover > .titleDiv {
     box-shadow: none;
-    /* background: linear-gradient(90deg, transparent, rgb(var(--secondary))); */
-    /* background-color: rgb(var(--secondary)); */
 }
 .link:hover > .titleDiv > div {
     width: 3rem;
 }
 .link:hover > .titleDiv > .title {
     background-color: transparent;
-    /* color: white; */
-    /* font-size: 1.3rem; */
-    /* backdrop-filter: none; */
 }
+
+@media screen and (min-width: 576px) {
+    .CategorieCardCont {
+        /* border: 1px solid red; */
+        /* margin: .5rem; */
+        width: 16rem;
+    }
+}
+
+
+
 
 @keyframes born {
     0% {

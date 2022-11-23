@@ -22,11 +22,6 @@ export default function Home() {
         dispatch(getCategorieNames())
         document.title = 'Cat Wiki - Home'
     }, [dispatch])
-    // const moreCategories = () => {
-    //     if(categoriesDiv.current) {
-    //         categoriesDiv.current.className = style.longCategoriesDiv
-    //     }
-    // }
 
 
     return (

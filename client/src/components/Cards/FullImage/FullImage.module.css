@@ -13,6 +13,9 @@
 .ContFullImage > img {
     width: 90%;
     animation: born 0.5s ease;
+    max-width: 50rem;
+    max-height: 40rem;
+    object-fit: contain;
 }
 
 @keyframes born {
