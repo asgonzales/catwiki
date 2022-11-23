@@ -1,0 +1,80 @@
+.contAboutCard {
+    /* border: 1px solid green; */
+    width: 100%;
+    /* margin: 1rem; */
+}
+.divPage, .divInfo {
+    /* width: 100%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+.contAboutCard > div > h1 {
+    font-family: 'Nunito';
+    font-weight: 800;
+    color: rgb(var(--primary));
+    border-bottom: 5px solid rgb(var(--slight));
+    
+}
+.contAboutCard > div > h3 {
+    font-family: 'Nunito';
+    font-weight: 600;
+    color: rgb(var(--primary));
+    border-bottom: 1px solid rgb(var(--slight));
+    
+}
+.contAboutCard > div > p {
+    font-family: 'Nunito';
+    font-weight: 600;
+    /* color: rgb(var(--pdark)); */
+    text-align: center;
+    
+}
+.divButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.divButtons > a {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divButtons > a > img {
+    margin: 0;
+    width: 100%;
+    /* height: 100%; */
+    object-fit: contain;
+    transition: all 0.2s ease;
+    filter: brightness(.4) invert(0.2) sepia(1) hue-rotate(330deg) saturate(500%);
+}
+.divButtons > a:hover > img {
+    width: 120%;
+}
+.Cat {
+    font-family: 'Gluten';
+    color: rgb(var(--primary));
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 0 0 2px rgb(var(--plight));
+}
+.Wiki {
+    font-family: 'Gluten';
+    color: rgb(var(--secondary));
+    font-weight: 700;
+    font-size: 2rem;
+    text-shadow: 0 0 2px rgb(var(--slight));
+}
+@media screen and (min-width: 768px) {
+    .contAboutCard {
+        width: 50rem;
+    }
+}
