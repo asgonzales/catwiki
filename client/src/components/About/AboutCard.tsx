@@ -20,7 +20,7 @@ export default function AboutCard () {
                 <h1>About</h1>
                 <h3><span className={style.Cat}>Cat</span> <span className={style.Wiki}>Wiki</span></h3>
                 <p><span className={style.Cat}>Cat</span> <span className={style.Wiki}>Wiki </span>
-                 is an application where you can look for cat images and breed's information.</p>
+                 is an application where you can look for cat images and information about breeds.</p>
             </div>
             <div className={style.divInfo}>
                 <h1>Made by</h1>    

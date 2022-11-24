@@ -36,7 +36,7 @@ export default function HomeCard () {
             </div>
             <div onClick={changeImage} className={style.infoDiv}>
                 <h3>Welcome to <br /> <span className={style.Cat} >Cat </span><span className={style.Wiki}> Wiki</span></h3>
-                <p>Here you can search for <span className={style.Cat} >Cat</span> images and breed's information!</p>
+                <p>Here you can search for <span className={style.Cat} >Cat</span> images and information about breeds!</p>
             </div>
         </div>
     )
