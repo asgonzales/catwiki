@@ -12,11 +12,12 @@ const catRoutes = Router();
 
 
 //Obtener una imagen aleatoria
-catRoutes.get('/image', async (_req, res) => {
+catRoutes.get('/image', async (req:Request, res:Response) => {
+    const { size } = req.query
     try {
         const response = await axios({
             method: 'GET',
-            url: 'https://api.thecatapi.com/v1/images/search',
+            url: `https://api.thecatapi.com/v1/images/search?size=${size}`,
         });
         res.status(200).json(response.data);
     } catch (err:any) {
@@ -25,7 +26,7 @@ catRoutes.get('/image', async (_req, res) => {
 })
 
 //Obtener las razas
-catRoutes.get('/breeds', async (_req, res) => {
+catRoutes.get('/breeds', async (req, res) => {
     try {
         const response = await axios({
             method: 'GET',
@@ -117,7 +118,6 @@ catRoutes.get('/categories', async (req:Request, res:Response) => {
                 method: 'GET',
                 url: `https://api.thecatapi.com/v1/images/search?category_ids=${categories[i].id}`
             })
-            console.log(url.data[0].url)
             categories[i] = {
                 ...categories[i],
                 image: url.data[0].url

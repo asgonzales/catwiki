@@ -29,13 +29,13 @@
     color: white;
 }
 .infoDiv > h3 {
-    text-shadow: 0 0 5px var(--black);
+    text-shadow: 0 0 5px rgb(var(--sdark));
     /* padding: 0rem; */
     font-family: 'Nunito';
     font-size: 2rem;
 }
 .infoDiv > p {
-    text-shadow: 0 0 5px var(--black);
+    text-shadow: 0 0 5px rgb(var(--sdark));
     font-family: 'Nunito';
     font-weight: 600;
     font-size: 2rem;
@@ -47,7 +47,11 @@
 }
 .Cat {
     font-family: 'Gluten';
-    color: var(--orange);
+    color: rgb(var(--primary));
+}
+.Wiki {
+    font-family: 'Gluten';
+    color: rgb(var(--secondary));
 }
 
 @keyframes born {

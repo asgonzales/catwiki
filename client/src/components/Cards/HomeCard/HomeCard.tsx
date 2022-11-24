@@ -16,10 +16,10 @@ export default function HomeCard () {
     const dispatch = useAppDispatch()
 
     useEffect(() => {
-        if(cat.image == '') dispatch(getHomeImage())
+        if(cat.image == '') dispatch(getHomeImage({size: 'full'}))
     }, [])
     const changeImage = () => {
-        dispatch(getHomeImage())
+        dispatch(getHomeImage({size: 'full'}))
     }
 
 
@@ -35,7 +35,7 @@ export default function HomeCard () {
                 }
             </div>
             <div onClick={changeImage} className={style.infoDiv}>
-                <h3>Welcome to <br /> <span className={style.Cat} >Cat </span><span> Wiki</span></h3>
+                <h3>Welcome to <br /> <span className={style.Cat} >Cat </span><span className={style.Wiki}> Wiki</span></h3>
                 <p>Here you can search for <span className={style.Cat} >Cat</span> images and breed's information!</p>
             </div>
         </div>

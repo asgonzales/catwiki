@@ -10,6 +10,7 @@
     justify-content: center;
     /* align-items: center; */
     animation: born 0.5s ease;
+    cursor: pointer;
 }
 .ContImageCard > img {
     width: 100%;

@@ -20,12 +20,8 @@ export default function Home() {
     useEffect(() => {
         if(categories.names.length == 0)
         dispatch(getCategorieNames())
+        document.title = 'Cat Wiki - Home'
     }, [dispatch])
-    // const moreCategories = () => {
-    //     if(categoriesDiv.current) {
-    //         categoriesDiv.current.className = style.longCategoriesDiv
-    //     }
-    // }
 
 
     return (

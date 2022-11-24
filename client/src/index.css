@@ -1,9 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Gluten:wght@100;200;300;400;500;600;700;800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 :root {
-  --shadow: rgba(30, 30, 30, .5);
-  --orange: #FB790E;
-  --shadow: rgba(0, 0, 0, .3);
-  --black: #020122;
+  /* --shadow: rgba(30, 30, 30, .5); */
+  /* --brown: #3A3535; */
+  /* --red: #D44000; */
+  /* --orange: #FF7A00; */
+  /* --white: #FFEFCF; */
+  /* --shadow: rgba(0, 0, 0, .3); */
+  /* --primary: #ff5f00; */
+  --primary: 255, 95, 0; /* ff5f00 */
+  --plight: 255, 145, 62; /* ff913e */
+  --pdark: 196, 42, 0; /* c42a00 */
+  --secondary: 153, 0, 0; /* 990000 */
+  --slight: 209, 67, 43; /* d1432b */
+  --sdark: 101, 0, 0; /* 650000 */
 }
 body {
   margin: 0;

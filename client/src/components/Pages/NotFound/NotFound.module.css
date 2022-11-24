@@ -1,0 +1,13 @@
+.ContNotFound {
+    width: 100%;
+    height: 20rem;
+    /* min-height: 100vh; */
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ContNotFound > h1 {
+    font-family: 'Gluten';
+    color: rgb(var(--primary));
+}

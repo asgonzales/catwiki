@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { Cats } from "../types/types.d";
+import { Cats, Params } from "../types/types.d";
 import { config } from "../types/config";
 
 
@@ -16,11 +16,11 @@ const initialState:Cats = {
 //Async Actions
 export const getHomeImage = createAsyncThunk(
     'cats/getHomeImage',
-    async (_, thunkAPI) => {
+    async (params:Params, thunkAPI) => {
         try {
             const response = await axios({
                 method: 'GET',
-                url: `${config.backUrl}/image`
+                url: `${config.backUrl}/image?size=${params.size}`
             })
             return response.data[0].url
         } catch (err:any) {
